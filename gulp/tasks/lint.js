@@ -17,4 +17,4 @@ gulp.task('lint:jscs', () => {
     .pipe(jscs.reporter());
 });
 
-gulp.task('lint', ['lint:jshint', 'lint:jscs'], (cb) => cb());
+gulp.task('lint', ['lint:jshint', 'lint:jscs'], cb => cb());

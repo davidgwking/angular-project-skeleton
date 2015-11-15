@@ -19,4 +19,4 @@ gulp.task('views:templates', () => {
     .pipe(browserSync.stream({once: true}));
 });
 
-gulp.task('views', ['views:index', 'views:templates'], (cb) => cb());
+gulp.task('views', ['views:index', 'views:templates'], cb => cb());
