@@ -1,0 +1,10 @@
+# project
+dist
+app/scripts/templates.js
+
+# osx
+.DS_Store*
+
+# npm
+node_modules
+npm-debug.log
