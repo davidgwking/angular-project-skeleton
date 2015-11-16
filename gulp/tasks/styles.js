@@ -10,19 +10,16 @@ import browserSync  from 'browser-sync';
 import autoprefixer from 'gulp-autoprefixer';
 
 gulp.task('styles', () => {
-
-  const createSourcemap = !global.isProd || config.styles.prodSourcemap;
-
   return gulp.src(config.styles.src)
-    .pipe(gulpif(createSourcemap, sourcemaps.init()))
+    .pipe(gulpif(config.styles.sourcemaps, sourcemaps.init()))
     .pipe(sass({
-      sourceComments: !global.isProd,
-      outputStyle: global.isProd ? 'compressed' : 'nested',
+      sourceComments: config.styles.comments,
+      outputStyle: config.styles.compress ? 'compressed' : 'nested',
       includePaths: config.styles.sassIncludePaths,
     }))
     .on('error', handleErrors)
     .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))
-    .pipe(gulpif(createSourcemap, sourcemaps.write(global.isProd ? './' : null)))
+    .pipe(gulpif(config.styles.sourcemaps, sourcemaps.write('./')))
     .pipe(gulp.dest(config.styles.dest))
     .pipe(browserSync.stream({once: true}));
 });

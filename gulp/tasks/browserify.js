@@ -25,10 +25,10 @@ function buildScript(file) {
     debug: true,
     cache: {},
     packageCache: {},
-    fullPaths: !global.isProd,
+    fullPaths: config.browserify.fullPaths,
   });
 
-  if (!global.isProd) {
+  if (config.browserify.watch) {
     bundler = watchify(bundler);
 
     bundler.on('update', () => {
@@ -51,13 +51,12 @@ function buildScript(file) {
 
   function rebundle() {
     const stream = bundler.bundle();
-    const createSourcemap = global.isProd && config.browserify.prodSourcemap;
 
     return stream.on('error', handleErrors)
       .pipe(source(file))
-      .pipe(gulpif(createSourcemap, buffer()))
-      .pipe(gulpif(createSourcemap, sourcemaps.init()))
-      .pipe(gulpif(global.isProd, streamify(uglify({
+      .pipe(gulpif(config.browserify.sourcemaps, buffer()))
+      .pipe(gulpif(config.browserify.sourcemaps, sourcemaps.init()))
+      .pipe(gulpif(config.browserify.uglify, streamify(uglify({
         // jscs:disable requirePaddingNewLinesBeforeLineComments
         mangle: false,
         // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
@@ -65,7 +64,7 @@ function buildScript(file) {
         // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
         // jscs:enable requirePaddingNewLinesBeforeLineComments
       }))))
-      .pipe(gulpif(createSourcemap, sourcemaps.write('./')))
+      .pipe(gulpif(config.browserify.sourcemaps, sourcemaps.write('./')))
       .pipe(gulp.dest(config.scripts.dest))
       .pipe(browserSync.stream({once: true}));
   }

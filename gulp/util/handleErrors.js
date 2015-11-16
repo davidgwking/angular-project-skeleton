@@ -1,11 +1,10 @@
 'use strict';
 
+import config from '../config';
 import notify from 'gulp-notify';
 
 export default function(error) {
-
-  if (!global.isProd) {
-
+  if (config.notifications) {
     var args = Array.prototype.slice.call(arguments);
 
     // Send error to notification center with gulp-notify
@@ -16,12 +15,10 @@ export default function(error) {
 
     // Keep gulp from hanging on this task
     this.emit('end');
-
   } else {
     // Log the error and stop the process
     // to prevent broken code from building
     console.log(error);
     process.exit(1);
   }
-
 }

@@ -2,16 +2,20 @@
 
 export default {
 
-  browserPort: 9000,
-  uiPort: 9001,
+  appPort: 9000,
+  browserSyncPort: 9001,
 
   sourceDir: 'app',
   buildDir: 'dist',
 
+  notifications: true,
+
   styles: {
     src: 'app/styles/**/*.scss',
     dest: 'dist/styles',
-    prodSourcemap: false,
+    comments: true,
+    compress: false,
+    sourcemaps: false,
     sassIncludePaths: [],
   },
 
@@ -23,6 +27,7 @@ export default {
   images: {
     src: 'app/images/**/*',
     dest: 'dist/images',
+    imagemin: true,
   },
 
   fonts: {
@@ -39,7 +44,10 @@ export default {
 
   browserify: {
     bundleName: 'main.js',
-    prodSourcemap: false,
+    sourcemaps: false,
+    fullPaths: true,
+    watch: true,
+    uglify: true,
   },
 
   gzip: {
