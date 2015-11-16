@@ -25,7 +25,7 @@ function buildScript(file) {
 
   var bundler = browserify({
     entries: [config.sourceDir + '/scripts/' + file],
-    debug: true,
+    debug: true, // include source maps
     cache: {},
     packageCache: {},
     fullPaths: config.browserify.fullPaths,
@@ -58,7 +58,7 @@ function buildScript(file) {
     return stream.on('error', handleErrors)
       .pipe(source(file))
       .pipe(gulpif(config.browserify.sourcemaps, buffer()))
-      .pipe(gulpif(config.browserify.sourcemaps, sourcemaps.init()))
+      .pipe(gulpif(config.browserify.sourcemaps, sourcemaps.init({loadMaps: true})))
       .pipe(gulpif(config.browserify.uglify, streamify(uglify({
         // jscs:disable requirePaddingNewLinesBeforeLineComments
         mangle: false,
