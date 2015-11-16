@@ -5,7 +5,7 @@ import notify from 'gulp-notify';
 
 export default function(error) {
   if (config.notifications) {
-    var args = Array.prototype.slice.call(arguments);
+    let args = Array.prototype.slice.call(arguments);
 
     // send error to notification center with gulp-notify
     notify.onError({

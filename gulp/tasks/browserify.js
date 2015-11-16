@@ -23,7 +23,7 @@ import ngAnnotate   from 'browserify-ngannotate';
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
 
-  var bundler = browserify({
+  let bundler = browserify({
     entries: [config.sourceDir + '/scripts/' + file],
     debug: true, // include source maps
     cache: {},

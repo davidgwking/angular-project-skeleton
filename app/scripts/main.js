@@ -9,7 +9,7 @@ import './directives';
 import './filters';
 import './services';
 
-var requires = [
+let requires = [
   'ui.router',
   'templates',
   'app.controllers',
