@@ -15,8 +15,8 @@ export default {
     src: 'app/styles/**/*.scss',
     dest: 'dist/styles',
     comments: true,
-    compress: false,
-    sourcemaps: false,
+    compress: true,
+    sourcemaps: true,
     sassIncludePaths: [],
   },
 
@@ -45,9 +45,16 @@ export default {
 
   browserify: {
     bundleName: 'main.js',
-    sourcemaps: false,
+    sourcemaps: true,
     fullPaths: true,
     watch: true,
+    uglify: true,
+  },
+
+  modernizr: {
+    fileName: 'modernizr.js',
+    dest: 'dist/scripts/vendor',
+    sourcemaps: true,
     uglify: true,
   },
 

@@ -3,11 +3,12 @@
 import config       from '../config';
 import gulp         from 'gulp';
 import gulpif       from 'gulp-if';
-import sourcemaps   from 'gulp-sourcemaps';
 import sass         from 'gulp-sass';
-import handleErrors from '../util/handleErrors';
-import browserSync  from 'browser-sync';
+import sourcemaps   from 'gulp-sourcemaps';
 import autoprefixer from 'gulp-autoprefixer';
+
+import browserSync  from 'browser-sync';
+import handleErrors from '../util/handleErrors';
 
 gulp.task('styles', () => {
   return gulp.src(config.styles.src)

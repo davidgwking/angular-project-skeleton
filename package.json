@@ -33,6 +33,7 @@
     "gulp-streamify": "~1.0.2",
     "gulp-uglify": "~1.5.1",
     "gulp-util": "~3.0.7",
+    "into-stream": "^2.0.0",
     "jshint-stylish": "~2.1.0",
     "modernizr": "~3.2.0",
     "run-sequence": "~1.1.4",

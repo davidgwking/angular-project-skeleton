@@ -1,8 +1,9 @@
 'use strict';
 
 import config      from '../config';
-import changed     from 'gulp-changed';
 import gulp        from 'gulp';
+import changed     from 'gulp-changed';
+
 import browserSync from 'browser-sync';
 
 gulp.task('fonts', () => {
