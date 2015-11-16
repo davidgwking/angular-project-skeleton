@@ -48,7 +48,7 @@ function buildScript(file) {
     {name: 'bulkify', options: {}},
   ];
 
-  transforms.forEach((transform) => {
+  transforms.forEach(transform => {
     bundler.transform(transform.name, transform.options);
   });
 
