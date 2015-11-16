@@ -8,6 +8,7 @@ export default {
   sourceDir: 'app',
   buildDir: 'dist',
 
+  exitOnError: true,
   notifications: true,
 
   styles: {
