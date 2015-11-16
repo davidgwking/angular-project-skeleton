@@ -64,4 +64,8 @@ export default {
     options: {},
   },
 
+  gulp: {
+    src: 'gulp/**/*.js',
+  },
+
 };
