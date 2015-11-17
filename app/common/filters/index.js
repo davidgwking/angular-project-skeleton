@@ -5,7 +5,7 @@ const bulk = require('bulk-require');
 
 const filtersModule = angular.module('app.filters', []);
 
-const filters = bulk(__dirname, ['./**/!(*index|*.spec).js']);
+const filters = bulk(__dirname, ['./**/*.js']);
 
 Object.keys(filters).forEach(key => {
   let item = filters[key];

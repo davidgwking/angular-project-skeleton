@@ -24,7 +24,7 @@ import ngAnnotate   from 'browserify-ngannotate';
 function buildScript(file) {
 
   let bundler = browserify({
-    entries: [config.sourceDir + '/scripts/' + file],
+    entries: [config.sourceDir + '/' + file],
     debug: true, // include source maps
     cache: {},
     packageCache: {},

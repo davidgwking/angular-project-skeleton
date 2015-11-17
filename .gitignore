@@ -1,6 +1,6 @@
 # project
 dist
-app/scripts/templates.js
+app/templates.js
 
 # osx
 .DS_Store*

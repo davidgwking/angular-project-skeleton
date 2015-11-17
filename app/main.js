@@ -4,10 +4,7 @@ import angular from 'angular';
 
 import 'angular-ui-router';
 import './templates';
-import './controllers';
-import './directives';
-import './filters';
-import './services';
+import './common';
 
 let requires = [
   'ui.router',

@@ -11,8 +11,19 @@ export default {
   exitOnError: true,
   notifications: true,
 
+  fonts: {
+    src: 'assets/fonts/**/*',
+    dest: 'dist/fonts',
+  },
+
+  images: {
+    src: 'assets/images/**/*',
+    dest: 'dist/images',
+    imagemin: true,
+  },
+
   styles: {
-    src: 'app/styles/**/*.scss',
+    src: 'assets/styles/**/*.scss',
     dest: 'dist/styles',
     comments: true,
     compress: true,
@@ -21,26 +32,15 @@ export default {
   },
 
   scripts: {
-    src: 'app/scripts/**/*.js',
+    src: 'app/**/*.js',
     dest: 'dist/scripts',
-  },
-
-  images: {
-    src: 'app/images/**/*',
-    dest: 'dist/images',
-    imagemin: true,
-  },
-
-  fonts: {
-    src: 'app/fonts/**/*',
-    dest: 'dist/fonts',
   },
 
   views: {
     index: 'app/index.html',
-    src: 'app/views/**/*.html',
-    dest: 'app/scripts',
-    watch: ['app/index.html', 'app/views/**/*.html'],
+    src: 'app/**/views/**/*.html',
+    dest: 'app',
+    watch: ['app/index.html', 'app/**/views/**/*.html'],
   },
 
   browserify: {
