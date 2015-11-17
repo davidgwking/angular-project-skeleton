@@ -9,10 +9,7 @@ import './common';
 let requires = [
   'ui.router',
   'templates',
-  'app.controllers',
-  'app.directives',
-  'app.filters',
-  'app.services',
+  'app.common',
 ];
 
 angular.module('app', requires);

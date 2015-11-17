@@ -1,5 +1,11 @@
 'use strict';
 
-const bulk = require('bulk-require');
+import angular from 'angular';
 
-bulk(__dirname, ['./*/index.js']);
+let requires = [];
+
+angular.module('app.common', requires);
+
+// import module components
+const bulk = require('bulk-require');
+bulk(__dirname, ['./**/*.js']);
