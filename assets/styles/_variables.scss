@@ -1,0 +1,44 @@
+/**********************************
+  Base Typography
+**********************************/
+$b-font-size: 17px;
+$b-font-family: 'OpenSans', Helvetica, Arial, sans-serif;
+$b-font-size-sm: 70%;
+$b-font-size-md: 100%;
+$b-font-size-lg: 130%;
+$b-font-size-xl: 160%;
+
+/**********************************
+  Base Spacing
+**********************************/
+$b-space: em(20px);
+$b-space-sm: $b-space * 0.5;
+$b-space-md: $b-space * 1.25;
+$b-space-lg: $b-space * 2;
+$b-space-xl: $b-space * 3.75;
+
+/**********************************
+  Color Pallete
+**********************************/
+$black: #000000;
+$white: #ffffff;
+$burgundy: #800020;
+$light-grey: #cccccc;
+
+/**********************************
+  Base Colors
+**********************************/
+$b-color: $black;
+$b-background-color: $white;
+
+/**********************************
+  Breakpoints
+**********************************/
+$g-xs-min: em($screen-xs-min);
+$g-sm-min: em($screen-sm-min);
+$g-md-min: em($screen-md-min);
+$g-lg-min: em($screen-lg-min);
+
+$g-xs-max: em($screen-xs-max);
+$g-sm-max: em($screen-sm-max);
+$g-md-max: em($screen-md-max);

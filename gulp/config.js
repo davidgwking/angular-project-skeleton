@@ -20,7 +20,7 @@ export default {
   images: {
     src: 'assets/images/**/*',
     dest: 'dist/images',
-    imagemin: true,
+    imagemin: false,
   },
 
   styles: {

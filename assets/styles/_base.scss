@@ -1,0 +1,19 @@
+html,
+body {
+  color: $b-color;
+  font-size: $b-font-size;
+  font-family: $b-font-family;
+
+  background-color: $b-background-color;
+}
+
+body,
+.app-container {
+  min-width: $g-xs-min;
+}
+
+.app-container {
+  @extend .container-fluid;
+
+  background-color: $burgundy;
+}

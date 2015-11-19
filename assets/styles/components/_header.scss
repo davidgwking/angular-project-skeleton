@@ -1,0 +1,15 @@
+.header {
+  @extend .jumbotron;
+
+  width: 75%;
+  margin: $b-space-md auto;
+
+  text-align: center;
+  font-size: $b-font-size-xl;
+
+  background-color: $light-grey;
+}
+
+.header__title {
+  font-size: $b-font-size-xl;
+}
