@@ -14,6 +14,7 @@ export default {
   fonts: {
     src: 'assets/fonts/**/*',
     dest: 'dist/fonts',
+    glyphicons: 'node_modules/bootstrap-sass/assets/fonts/**/*',
   },
 
   images: {
@@ -26,9 +27,12 @@ export default {
     src: 'assets/styles/**/*.scss',
     dest: 'dist/styles',
     comments: true,
-    compress: true,
-    sourcemaps: true,
-    sassIncludePaths: [],
+    compress: false,
+    sourcemaps: false,
+    sassIncludePaths: [
+      'assets/styles',
+      'node_modules/bootstrap-sass/assets/stylesheets',
+    ],
   },
 
   scripts: {
@@ -45,17 +49,17 @@ export default {
 
   browserify: {
     bundleName: 'main.js',
-    sourcemaps: true,
+    sourcemaps: false,
     fullPaths: true,
     watch: true,
-    uglify: true,
+    uglify: false,
   },
 
   modernizr: {
     fileName: 'modernizr.js',
     dest: 'dist/scripts/vendor',
-    sourcemaps: true,
-    uglify: true,
+    sourcemaps: false,
+    uglify: false,
   },
 
   gzip: {
