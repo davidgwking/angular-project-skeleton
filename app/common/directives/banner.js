@@ -3,7 +3,7 @@
 import angular from 'angular';
 
 angular.module('app.common')
-  .directive('banner', function() {
+  .directive('banner', () => {
     return {
       restrict: 'E',
       scope: {},

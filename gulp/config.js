@@ -68,6 +68,11 @@ export default {
     options: {},
   },
 
+  test: {
+    karma: 'test/karma.conf.js',
+    protractor: 'test/protractor.conf.js',
+  },
+
   gulp: {
     src: 'gulp/**/*.js',
   },

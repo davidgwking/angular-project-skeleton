@@ -2,7 +2,9 @@
 
 import angular from 'angular';
 
-let requires = [];
+let requires = [
+  'templates',
+];
 
 angular.module('app.common', requires);
 

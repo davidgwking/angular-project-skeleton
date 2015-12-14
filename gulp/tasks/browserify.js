@@ -21,7 +21,7 @@ import browserify   from 'browserify';
 import ngAnnotate   from 'browserify-ngannotate';
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
-function buildScript(file) {
+function buildScript(file, watch) {
 
   let bundler = browserify({
     entries: [config.sourceDir + '/' + file],
@@ -31,7 +31,7 @@ function buildScript(file) {
     fullPaths: config.browserify.fullPaths,
   });
 
-  if (config.browserify.watch) {
+  if (watch && config.browserify.watch) {
     bundler = watchify(bundler);
 
     bundler.on('update', () => {
@@ -77,4 +77,8 @@ function buildScript(file) {
 
 gulp.task('browserify', () => {
   return buildScript('main.js');
+});
+
+gulp.task('browserify:watch', () => {
+  return buildScript('main.js', true);
 });

@@ -3,17 +3,17 @@
 import config from '../config';
 import notify from 'gulp-notify';
 
-export default function(error) {
+export default err => {
   if (config.notifications) {
     let args = Array.prototype.slice.call(arguments);
 
     // send error to notification center with gulp-notify
     notify.onError({
       title: 'Compile Error',
-      message: '<%= error.message %>',
+      message: '<%= err.message %>',
     }).apply(this, args);
   } else {
-    console.log(error);
+    console.log(err);
   }
 
   if (config.exitOnError) {
@@ -22,4 +22,4 @@ export default function(error) {
     // keep gulp from hanging on this task
     this.emit('end');
   }
-}
+};
